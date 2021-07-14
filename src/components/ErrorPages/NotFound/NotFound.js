@@ -4,7 +4,7 @@ import './NotFound.css'
 const notFound = (props) => {
     return (
         <p className={'notFound'}>
-            404 NOT FOUND
+            Error: server offline or wrong url
         </p>
     )
 }

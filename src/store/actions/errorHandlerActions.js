@@ -15,11 +15,16 @@ const executeOtherErrorHandler = (error) => {
 }
 
 export const handleHTTPError = (error, props) => {
-    if (error.response.status === 404) {
-        return execute404Handler(props);
+    if (error.response){
+        if (error.response.status === 404) {
+            return execute404Handler(props);
+        }
+        else {
+            return executeOtherErrorHandler(error);
+        }
     }
     else {
-        return executeOtherErrorHandler(error);
+        return execute404Handler(props);
     }
 }
 
